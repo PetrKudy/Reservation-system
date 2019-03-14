@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+{% load staticfiles%}
+<div class="jumbotron" style=background-color:#c1c1c1 jumbotron-fluid >
+  <div class="container">
+  <h1>Photogallery</h1>
+  <img class= 'show_img' src="{% static "images/1.jpg" %}" alt="My image" height="150px" width="170px">
+  <img class= 'show_img' src="{% static "images/2.jpg" %}" alt="My image" height="150px" width="170px">
+  <img class= 'show_img' src="{% static "images/3.jpg" %}" alt="My image" height="150px" width="170px">
+  <img class= 'show_img' src="{% static "images/4.jpg" %}" alt="My image" height="150px" width="170px">
+  <img class= 'show_img' src="{% static "images/5.jpg" %}" alt="My image" height="150px" width="170px">
+  <img class= 'show_img' src="{% static "images/6.jpg" %}" alt="My image" height="150px" width="170px">
+  <img class= 'show_img' src="{% static "images/7.jpg" %}" alt="My image" height="150px" width="170px">
+  <img class= 'show_img' src="{% static "images/8.jpg" %}" alt="My image" height="150px" width="170px">
+
+</div>
+<script>
+  $("img").mouseover(function(){
+    $(this).addClass("photo-change");
+
+  });
+
+  $("img").mouseleave(function(){
+    $(this).removeClass("photo-change");
+
+  });
+
+  $("img").click(function(){
+  window.open(this.src, '_blank');
+});
+
+</script>
+
+
+
+
+
+
+
+{% endblock %}

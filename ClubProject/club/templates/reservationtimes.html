@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+<div class="jumbotron" style=background-color:#c1c1c1; >
+  <div style="margin:0 auto;text-align:center">
+
+<h1>{{object.Date}}</h1>
+  <form  method="post">
+    {% csrf_token %}
+    {{form.first_name.label}}<br>
+    {{form.first_name}}<br>
+    {{form.sur_name.label}}<br>
+    {{form.sur_name}}<br>
+    {{form.email.label}}<br>
+    {{form.email}}<br>
+    {{form.mobil_phone.label}}<br>
+    {{form.mobil_phone}}<br>
+    {{form.Time_Select.label}}<br>
+    {{form.Time_Select}}<br><br>
+  <button type="submit" style=height:50px;width:200px;>Send</button>
+    </div>
+  {% endblock %}
+</div>

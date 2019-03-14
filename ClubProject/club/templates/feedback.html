@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+<div class="jumbotron" style=background-color:#c1c1c1; >
+<h1>Leave a comment here</h1>
+<table>
+<form  method="post">
+    {% csrf_token %}
+    <th>
+      <td style= "padding:0px 0px;border: solid 0px;text-align: left;">
+      {{ form.name.label }}<br>
+      {{ form.name }} <br>
+      {{form.text.label}} <br>
+      {{form.text}}
+      </td>
+
+      <td style="border:solid 0px;padding:0px 0px">
+        <input type="submit" value="Submit" style="height:110px;width:110px;">
+      </td>
+    </tr>
+
+
+
+</table>
+
+
+</form>
+
+<div class="jumbotron" style=background-color:#c1c2c1;>
+  {% for post in PostList %}
+    <p class ='post_name'>{{post.name}}</p>
+    <p class = 'post_created'>{{post.post_created}}</p>
+    <p class ='post_text'>{{post.text}}</p>
+    <hr>
+    {% empty %}
+    <h3>There are no feedbacks yet</h3>
+  {% endfor %}
+
+</div>
+{% endblock %}

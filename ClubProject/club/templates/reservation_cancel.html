@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+<div class="jumbotron" style=background-color:#c1c1c1; >
+<h1>Cancel reservation</h1>
+<form method="post">
+<div  style="margin:0 auto;text-align:center" >
+  {% csrf_token %}
+  {{form.your_code.label}}<br>
+  {{form.your_code}}<br>
+  {{form.your_email.label}}<br>
+  {{form.your_email}}<br>
+  <p style="color:red">{{message}}</p>
+  <button type="submit" style=height:50px;width:200px;>Cancel reservation</button>
+</div>
+</form>
+</div>
+{% endblock %}

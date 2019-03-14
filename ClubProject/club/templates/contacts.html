@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+<div class="jumbotron" style=background-color:#c1c1c1; >
+<h1>Please use form below to contact us</h1>
+<div class="contact_send">
+<form  method="POST">
+<div  style="margin:0 auto;text-align:center" >
+      {% csrf_token %}
+      {{ form.sur_name.label}}<br>
+      {{ form.sur_name}}<br>
+      {{form.last_name.label}}<br>
+      {{form.last_name}}<br>
+      {{form.your_email.label}}<br>
+      {{form.your_email}}<br>
+      {{form.subject.label}}<br>
+      {{form.subject}}<br>
+      {{form.message.label}}<br>
+      {{form.message}}<br><br>
+      <button type="submit" style=height:50px;width:200px;>Send</button>
+</div>
+
+</form>
+</div>
+
+</div>
+
+{% endblock %}
